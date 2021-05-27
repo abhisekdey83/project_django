@@ -7,8 +7,8 @@ def home(request):
 	return render(request,'home.html',{'name':'Abhisek'})
 
 def add(request):
-	pname = request.GET['pname']
-	price = int(request.GET['price'])
-	qty = int(request.GET['qty'])
+	pname = request.POST['pname']
+	price = int(request.POST['price'])
+	qty = int(request.POST['qty'])
 	tp = price*qty
 	return render(request,"result.html",{"pname":pname,"price":price,"qty":qty,"tp":tp})
